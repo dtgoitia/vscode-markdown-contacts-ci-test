@@ -1,5 +1,3 @@
-# markdown-contacts README
-
 ```
 TODO: mention somewhere how to add a list of name
 TODO: mention somewhere that you need to reload the editor to get latest list of names
@@ -9,8 +7,6 @@ TODO: to bundle the extension with webpack before publishing it:
 TODO: package the extension with vcse to publish it:
   - ./node_modules/.bin/vsce package
 ```
-
-This is the README for your extension "markdown-contacts". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 

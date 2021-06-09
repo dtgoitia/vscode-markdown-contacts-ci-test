@@ -4,8 +4,16 @@
   "description": "",
   "publisher": "dtgoitia",
   "version": "0.0.1",
+  "license": "MIT",
+  "keywords": ["markdown", "contacts"],
   "engines": {
     "vscode": "^1.56.0"
+  },
+  "repository": {
+    "url": "https://github.com/dtgoitia/vscode-markdown-contacts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dtgoitia/vscode-markdown-contacts/issues"
   },
   "categories": [
     "Other"
