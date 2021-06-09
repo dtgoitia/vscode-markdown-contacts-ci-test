@@ -1,5 +1,11 @@
 # markdown-contacts README
 
+```
+TODO: mention somewhere how to add a list of name
+TODO: mention somewhere that you need to reload the editor to get latest list of names
+  - you could reload on each call, but that's an unnecessary overhead because names don't change that often
+```
+
 This is the README for your extension "markdown-contacts". After writing up a brief description, we recommend including the following sections.
 
 ## Features
