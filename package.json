@@ -3,7 +3,7 @@
   "displayName": "markdown-contacts",
   "description": "",
   "publisher": "dtgoitia",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "keywords": ["markdown", "contacts"],
   "engines": {
@@ -26,10 +26,15 @@
     "configuration": {
       "title": "Markdown contacts",
       "properties": {
-        "markdown-contacts.names": {
+        "markdown-contacts.globalNames": {
           "type": "array",
           "default": [],
-          "description": "Names to be suggested, e.g.: PabloPicasso"
+          "description": "Names to be suggested, e.g.: PabloPicasso. Available in all workspaces"
+        },
+        "markdown-contacts.workspaceNames": {
+          "type": "array",
+          "default": [],
+          "description": "Names to be suggested, e.g.: PabloPicasso. Available only in one workspace"
         }
       }
     }
