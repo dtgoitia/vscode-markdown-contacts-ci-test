@@ -47,7 +47,9 @@ class Configuration {
 
 function getConfiguration(): Configuration {
 	const config = vscode.workspace.getConfiguration('markdown-contacts');
-	const names = config.get<Person[]>('names', []);
+	const globalNames = config.get<Person[]>('globalNames', []);
+	const workspaceNames = config.get<Person[]>('workspaceNames', []);
+	const names = [...globalNames, ...workspaceNames];
 	const configuration = new Configuration(names)
 	return configuration;
 }
