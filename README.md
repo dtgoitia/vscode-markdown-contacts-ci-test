@@ -15,9 +15,16 @@
 
 * To manually publish the extension:
 
-  ```shell
-  npm run publish
-  ```
+  1. Set up credentials as environment variables:
+
+      - `VSCODE_PUBLISHER_ID`: publisher ID, see [here][1] for more context.
+      - `VSCE_PAT`: personal access token, follow [these instructions][1] to get one.
+
+  1. Publish the extension bumping the version:
+
+      ```shell
+      npm run publish minor  # major/minor/patch, see `npm version --help` for more options
+      ```
 
   This will bundle the extension with `webpack` (same as `npm run vscode:prepublish`) and upload it to the extension marketplace.
 
@@ -85,3 +92,7 @@ Reload VSCode when you change the list of names in the extension settings.
 ### 0.0.1
 
 * Initial release
+
+<!-- External references -->
+
+[1]: https://code.visualstudio.com/api/working-with-extensions/publishing-extension#get-a-personal-access-token "VSCode. Publishing extensions: get a personal access token"
