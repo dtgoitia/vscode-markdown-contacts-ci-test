@@ -15,6 +15,13 @@ TODO: add schema helper for `settings.json`
 npm install  # do not use `npm ci`
 ```
 
+To debug the extension in VSCode:
+
+  - Run TypeScript compiler: `npm run watch`.
+  - Open `src/extension.ts` in your editor.
+  - Press `F5`.
+  - Once the new VSCode instance is launched, select the Markdown language.
+
 ## Features
 
 ...
