@@ -62,6 +62,14 @@ In the workspace settings (optional):
 
 ...
 
+### 0.0.3
+
+* Add contributes to enable schema for the settings of the extension.
+
+### 0.0.2
+
+* Fix: merge global and workspace settings
+
 ### 0.0.1
 
-Initial release
+* Initial release
