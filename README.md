@@ -62,6 +62,12 @@ In the workspace settings (optional):
 
 ...
 
+### 0.0.4
+
+* Document previous releases.
+* Document how to debug the extension in VSCode.
+* Update dependencies.
+
 ### 0.0.3
 
 * Add contributes to enable schema for the settings of the extension.
