@@ -1,11 +1,3 @@
-```
-TODO: mention somewhere how to add a list of name
-TODO: mention somewhere that you need to reload the editor to get latest list of names
-  - you could reload on each call, but that's an unnecessary overhead because names don't change that often
-TODO: package the extension with vcse to publish it:
-  - ./node_modules/.bin/vsce package
-```
-
 ## Extension development
 
 * Install project dependencies:
@@ -63,6 +55,8 @@ In the workspace settings (optional):
 }
 ```
 
+Reload VSCode when you change the list of names in the extension settings.
+
 ## Known Issues
 
 ...
@@ -73,6 +67,7 @@ In the workspace settings (optional):
 
 ### 0.0.4
 
+* Document how to get latest extension settings
 * Add instructions to manually publish package
 * Add NPM script to manually publish package
 * Document previous releases
