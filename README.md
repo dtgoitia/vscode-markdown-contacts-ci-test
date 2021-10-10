@@ -28,8 +28,6 @@
 
   This will bundle the extension with `webpack` (same as `npm run vscode:prepublish`) and upload it to the extension marketplace.
 
-  NOTE: version will not be automatically bumped at `package.json`.
-
 ## Features
 
 ...
@@ -69,6 +67,10 @@ Reload VSCode when you change the list of names in the extension settings.
 ...
 
 ## Release Notes
+
+### 0.0.7
+
+* Update docs: version is automatically bumped now
 
 ### 0.0.6
 
