@@ -2,25 +2,34 @@
 TODO: mention somewhere how to add a list of name
 TODO: mention somewhere that you need to reload the editor to get latest list of names
   - you could reload on each call, but that's an unnecessary overhead because names don't change that often
-TODO: to bundle the extension with webpack before publishing it:
-  - npm run vscode:prepublish
 TODO: package the extension with vcse to publish it:
   - ./node_modules/.bin/vsce package
-TODO: add schema helper for `settings.json`
 ```
 
-## Set up environment for development
+## Extension development
 
-```shell
-npm install  # do not use `npm ci`
-```
+* Install project dependencies:
 
-To debug the extension in VSCode:
+  ```shell
+  npm install  # do not use `npm ci`
+  ```
 
-  - Run TypeScript compiler: `npm run watch`.
-  - Open `src/extension.ts` in your editor.
-  - Press `F5`.
-  - Once the new VSCode instance is launched, select the Markdown language.
+* To debug the extension in VSCode:
+
+  1. Run TypeScript compiler: `npm run watch`.
+  1. Open `src/extension.ts` in your editor.
+  1. Press `F5`.
+  1. Once the new VSCode instance is launched, select the Markdown language.
+
+* To manually publish the extension:
+
+  ```shell
+  npm run publish
+  ```
+
+  This will bundle the extension with `webpack` (same as `npm run vscode:prepublish`) and upload it to the extension marketplace.
+
+  NOTE: version will not be automatically bumped at `package.json`.
 
 ## Features
 
@@ -64,13 +73,15 @@ In the workspace settings (optional):
 
 ### 0.0.4
 
-* Document previous releases.
-* Document how to debug the extension in VSCode.
-* Update dependencies.
+* Add instructions to manually publish package
+* Add NPM script to manually publish package
+* Document previous releases
+* Document how to debug the extension in VSCode
+* Update dependencies
 
 ### 0.0.3
 
-* Add contributes to enable schema for the settings of the extension.
+* Add contributes to enable schema for the settings of the extension
 
 ### 0.0.2
 
