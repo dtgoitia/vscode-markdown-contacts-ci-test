@@ -1,9 +1,9 @@
 {
-  "name": "markdown-contacts",
-  "displayName": "markdown-contacts",
+  "name": "markdown-contacts-ci-tests",
+  "displayName": "markdown-contacts-ci-tests",
   "description": "",
   "publisher": "dtgoitia",
-  "version": "0.0.6",
+  "version": "0.0.1",
   "license": "MIT",
   "keywords": [
     "markdown",
