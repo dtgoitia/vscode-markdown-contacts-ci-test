@@ -1,19 +1,23 @@
 version: 2.1
 
+prelude: &prelude
+  docker:
+    - image: cimg/node:16.10.0
+
 jobs:
   publish:
-    docker:
-      - image: cimg/node:16.10.0
+    <<: *prelude
     steps:
       - checkout
       - run: npm ci
+      # TODO: cache installation with a hash
       - run: npm run publish
 
 workflows:
   publish:
     jobs:
       - publish
-      # TODO: require test step
-      # - publish
-      #     requires:
-      #       - test
+          requires:
+            - hold  # manual approval
+          # TODO: require test step
+          #  - test
