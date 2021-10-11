@@ -1,19 +1,52 @@
 version: 2.1
 
+
 prelude: &prelude
   docker:
     - image: cimg/node:16.10.0
 
+
+commands:
+
+  load_environment_from_cache:
+    steps:
+      - restore_cache:
+          keys:
+            - package-lock-{{ checksum "package-lock.json" }}
+
+  install_dependencies:
+    steps:
+      - run:
+          name: Install dependencies in package-lock.json
+          command: npm ci
+
+  save_environment_to_cache:
+    steps:
+      - save_cache:
+          keys:
+            - package-lock-{{ checksum "package-lock.json" }}
+
+
 jobs:
+
+  nodejs_environment:
+    <<: *prelude
+    steps:
+      - checkout
+      - load_environment_from_cache
+      - install_dependencies
+      - save_environment_to_cache
+
   publish:
     <<: *prelude
     steps:
       - checkout
-      - run: npm ci
-      # TODO: cache installation with a hash
+      - nodejs_environment
       - run: npm run publish
 
+
 workflows:
+
   publish:
     jobs:
       - manual_approval:
