@@ -6,7 +6,8 @@ jobs:
       - image: cimg/node:16.10.0
     steps:
       - checkout
-      - run: node --version
+      - run: npm ci
+      - run: npm run publish
 
 workflows:
   publish:
