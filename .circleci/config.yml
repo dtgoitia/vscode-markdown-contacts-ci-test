@@ -16,8 +16,8 @@ jobs:
 workflows:
   publish:
     jobs:
-      - hold:
+      - manual_approval:
           type: approval
       - publish:
           requires:
-            - hold
+            - manual_approval
