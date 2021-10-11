@@ -16,8 +16,8 @@ jobs:
 workflows:
   publish:
     jobs:
-      - publish
+      - hold:
+          type: approval
+      - publish:
           requires:
-            - hold  # manual approval
-          # TODO: require test step
-          #  - test
+            - hold
