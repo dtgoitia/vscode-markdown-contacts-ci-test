@@ -4,6 +4,7 @@ version: 2.1
 prelude: &prelude
   docker:
     - image: cimg/node:16.10.0
+  working_directory: ~/app
 
 
 commands:
@@ -24,7 +25,7 @@ commands:
       - save_cache:
           key: package-lock-{{ checksum "package-lock.json" }}
           paths:
-            - ~/node_modules
+            - ~/app/node_modules
 
 
 jobs:
