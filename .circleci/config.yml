@@ -17,7 +17,7 @@ commands:
   install_dependencies:
     steps:
       - run:
-          name: Install dependencies in package-lock.json
+          name: Install dependencies from `package-lock.json`
           command: npm ci
 
   save_environment_to_cache:
@@ -36,8 +36,6 @@ jobs:
       - checkout
       - load_environment_from_cache
       - install_dependencies
-      - run: ls -al
-      - run: pwd
       - save_environment_to_cache
 
   publish:
@@ -45,8 +43,6 @@ jobs:
     steps:
       - checkout
       - load_environment_from_cache
-      - run: ls -al
-      - run: pwd
       - run:
           name: Publish extension to VSCode Marketplace
           command: npm run publish
@@ -57,10 +53,10 @@ workflows:
   publish:
     jobs:
       - nodejs_environment
-      - manual_approval:
+      - manual_approval_to_publish:
           type: approval
           requires:
             - nodejs_environment
       - publish:
           requires:
-            - manual_approval
+            - manual_approval_to_publish
