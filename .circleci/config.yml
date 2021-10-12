@@ -35,6 +35,7 @@ jobs:
       - checkout
       - load_environment_from_cache
       - install_dependencies
+      - run: ls -al
       - save_environment_to_cache
 
   publish:
