@@ -30,7 +30,7 @@ commands:
 
 jobs:
 
-  set_up_nodejs_environment:
+  set_up_environment:
     <<: *prelude
     steps:
       - checkout
@@ -52,11 +52,11 @@ workflows:
 
   publish:
     jobs:
-      - set_up_nodejs_environment
+      - set_up_environment
       - manual_approval_to_publish:
           type: approval
           requires:
-            - set_up_nodejs_environment
+            - set_up_environment
       - publish:
           requires:
             - manual_approval_to_publish
