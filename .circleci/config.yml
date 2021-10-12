@@ -11,8 +11,7 @@ commands:
   load_environment_from_cache:
     steps:
       - restore_cache:
-          keys:
-            - package-lock-{{ checksum "package-lock.json" }}
+          key: package-lock-{{ checksum "package-lock.json" }}
 
   install_dependencies:
     steps:
@@ -23,8 +22,9 @@ commands:
   save_environment_to_cache:
     steps:
       - save_cache:
-          keys:
-            - package-lock-{{ checksum "package-lock.json" }}
+          key: package-lock-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/node_modules
 
 
 jobs:
@@ -41,16 +41,20 @@ jobs:
     <<: *prelude
     steps:
       - checkout
-      - nodejs_environment
-      - run: npm run publish
+      - run:
+          name: Publish extension to VSCode Marketplace
+          command: npm run publish
 
 
 workflows:
 
   publish:
     jobs:
+      - nodejs_environment
       - manual_approval:
           type: approval
+          requires:
+            - nodejs_environment
       - publish:
           requires:
             - manual_approval
