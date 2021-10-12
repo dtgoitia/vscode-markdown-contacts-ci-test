@@ -44,6 +44,7 @@ jobs:
     <<: *prelude
     steps:
       - checkout
+      - load_environment_from_cache
       - run: ls -al
       - run: pwd
       - run:
