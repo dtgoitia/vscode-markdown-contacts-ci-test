@@ -43,6 +43,8 @@ jobs:
     <<: *prelude
     steps:
       - checkout
+      - run: ls -al
+      - run: pwd
       - run:
           name: Publish extension to VSCode Marketplace
           command: npm run publish
