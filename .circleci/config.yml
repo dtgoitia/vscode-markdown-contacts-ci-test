@@ -36,6 +36,7 @@ jobs:
       - load_environment_from_cache
       - install_dependencies
       - run: ls -al
+      - run: pwd
       - save_environment_to_cache
 
   publish:
